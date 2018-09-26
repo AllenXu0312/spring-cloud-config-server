@@ -1,0 +1,29 @@
+server: 
+  port: 8180
+
+spring: 
+  application: 
+    name: spring-config-server
+  cloud: 
+    config: 
+      server: 
+        git: 
+          uri: http://192.168.29.129/root/spring-cloud-config
+          username: root
+          password: amarsoft
+          clone-on-start: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+    
+eureka: 
+  client: 
+    serviceUrl: 
+      defaultZone: http://aaa:bbb@localhost:8761/eureka/
